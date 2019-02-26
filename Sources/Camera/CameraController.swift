@@ -34,12 +34,14 @@ class CameraController: UIViewController {
     super.viewWillAppear(animated)
 
     locationManager?.start()
+    cameraMan.session.startRunning()
   }
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
 
     locationManager?.stop()
+    cameraMan.session.startRunning()
   }
 
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
